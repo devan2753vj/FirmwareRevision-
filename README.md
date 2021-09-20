@@ -1,0 +1,2 @@
+# FirmwareRevision-
+#RequireAdmin  Func GetFirmware() ;$id Local $FirmWare, $strComputer = "."   Local $objWMIService = ObjGet("winmgmts:\\" &amp; $strComputer &amp; "\root\cimv2") $objFirmWare = $objWMIService.ExecQuery ("“SELECT * FROM MSDeviceUI_FirmwareRevision")  For $objItem In $objFirmWare     ConsoleWrite("Active:" &amp; $objItem.Active &amp; @CRLF)     ConsoleWrite("FirmwareRevision:" &amp; $objItem.FirmwareRevision &amp; @CRLF)     ConsoleWrite("InstanceName:" &amp; $objItem.InstanceName &amp; @CRLF) Next  EndFunc
